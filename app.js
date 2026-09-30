@@ -257,33 +257,10 @@
   dateInput.addEventListener("input", function () { order.date = dateInput.value; if (basket.size) elSend.href = waLink(buildMessage()); });
   notesInput.addEventListener("input", function () { order.notes = notesInput.value; if (basket.size) elSend.href = waLink(buildMessage()); });
 
-  /* ---------- Destaques ---------- */
-  function rng(seed) {
-    var h = 2166136261;
-    for (var i = 0; i < seed.length; i++) { h ^= seed.charCodeAt(i); h = Math.imul(h, 16777619); }
-    return function () {
-      h += 0x6D2B79F5;
-      var t = Math.imul(h ^ (h >>> 15), 1 | h);
-      t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-    };
-  }
-
-  function confetti(seed, dark) {
-    var r = rng(seed);
-    var colors = dark ? ["#f7b8c4", "#8edbcb", "#f6c453", "#fff0e8"] : ["#ffffff", "#3a1d17", "#f6c453", "#f08fa3", "#0b7a6e"];
-    var out = '<svg class="confetti" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';
-    for (var i = 0; i < 16; i++) {
-      var x = (r() * 100).toFixed(1), y = (r() * 100).toFixed(1), a = (r() * 180).toFixed(0);
-      var c = colors[Math.floor(r() * colors.length)];
-      out += '<rect x="' + x + '" y="' + y + '" width="3" height="9" rx="1.5" fill="' + c + '" opacity=".75" transform="rotate(' + a + " " + x + " " + y + ')"/>';
-    }
-    return out + "</svg>";
-  }
-
+  /* ---------- Destaques (só aparecem com foto) ---------- */
   function hasPhoto(id) { return data.photos.indexOf(id) !== -1; }
 
-  function priceNode(p, cls) {
+  function priceNode(p) {
     var s = el("span", "price" + (p.price == null ? " consult" : ""));
     if (p.price == null) { s.textContent = "Sob consulta"; return s; }
     s.textContent = fmt(p.price);
@@ -299,34 +276,34 @@
   }
 
   var rail = $("#featured");
-  data.featured.forEach(function (name) {
-    var p = data.products.filter(function (x) { return x.name === name; })[0];
-    if (!p) return;
-    var cat = catById[p.cat];
-    var card = el("article", "fcard");
-    var vis = el("div", "fvisual");
-    vis.setAttribute("data-cat", p.cat);
-    if (hasPhoto(p.id)) {
+  var featured = data.featured.map(function (name) {
+    return data.products.filter(function (x) { return x.name === name; })[0];
+  }).filter(function (p) { return p && hasPhoto(p.id); });
+
+  if (!featured.length) {
+    $("#destaques").hidden = true;
+  } else {
+    featured.forEach(function (p) {
+      var cat = catById[p.cat];
+      var card = el("article", "fcard");
+      var vis = el("div", "fvisual");
       var img = el("img");
       img.src = "assets/produtos/" + p.id + ".jpg";
       img.alt = p.name;
       img.loading = "lazy";
       vis.appendChild(img);
-    } else {
-      vis.innerHTML = confetti(p.id, p.cat === "brigadeiros");
-      vis.appendChild(el("span", "word", cat.singular));
-    }
-    var body = el("div", "fbody");
-    body.appendChild(el("p", "fcat", cat.label));
-    body.appendChild(el("h3", "", p.name));
-    if (p.desc) body.appendChild(el("p", "fdesc", p.desc));
-    var buy = el("div", "fbuy");
-    buy.appendChild(priceNode(p));
-    buy.appendChild(addButton(p.id));
-    body.appendChild(buy);
-    card.appendChild(vis); card.appendChild(body);
-    rail.appendChild(card);
-  });
+      var body = el("div", "fbody");
+      body.appendChild(el("p", "fcat", cat.label));
+      body.appendChild(el("h3", "", p.name));
+      if (p.desc) body.appendChild(el("p", "fdesc", p.desc));
+      var buy = el("div", "fbuy");
+      buy.appendChild(priceNode(p));
+      buy.appendChild(addButton(p.id));
+      body.appendChild(buy);
+      card.appendChild(vis); card.appendChild(body);
+      rail.appendChild(card);
+    });
+  }
 
   function scrollRail(dir) {
     var card = $(".fcard", rail);
@@ -541,7 +518,8 @@
 
   /* Fundo do hero: granulado caindo e fugindo do mouse */
   var bg = new Field($("#bg-sprinkles"));
-  var count = window.innerWidth < 700 ? 26 : 56;
+  var smallScreen = window.matchMedia("(max-width: 700px)").matches;
+  var count = smallScreen ? 0 : 56;
   for (var i = 0; i < count; i++) bg.p.push(makeSprinkle(bg.w, bg.h, true));
   bg.step = function () {
     var m = this.mouse;
@@ -583,7 +561,7 @@
     if (!this.p.length) { this.running = false; this.ctx.clearRect(0, 0, this.w, this.h); }
   };
   fx.burst = function (x, y, n) {
-    if (reduceMotion) return;
+    if (reduceMotion || !canHover) return;
     for (var i = 0; i < n; i++) {
       var a = Math.random() * Math.PI * 2, sp = 2 + Math.random() * 5;
       var s = makeSprinkle(0, 0, true);
@@ -598,7 +576,9 @@
   };
 
   var hero = $("#inicio");
-  if (reduceMotion) {
+  if (smallScreen) {
+    /* celular: fundo limpo, sem granulado */
+  } else if (reduceMotion) {
     bg.draw();
   } else {
     var heroVisible = true;
@@ -617,10 +597,6 @@
     window.addEventListener("pointermove", function (e) {
       if (e.pointerType === "mouse") { bg.mouse.x = e.clientX; bg.mouse.y = e.clientY; }
     }, { passive: true });
-    hero.addEventListener("pointerdown", function (e) {
-      if (e.target.closest("a, button")) return;
-      fx.burst(e.clientX, e.clientY, 16);
-    });
   }
   window.addEventListener("resize", function () {
     bg.resize(); fx.resize();

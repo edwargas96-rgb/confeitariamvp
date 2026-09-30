@@ -1,5 +1,5 @@
 /*
-  Dados do site, tirados do cardápio 2026 e do cardápio de almoço da Fernanda Lemos.
+  Dados do site, tirados do cardápio mais recente e do cardápio de almoço da Fernanda Lemos Doceria.
 
   Como atualizar:
   - Preço ou descrição: troque o valor na linha do produto.
@@ -28,119 +28,124 @@
     });
   }
 
-  /* Bolos e tortas (preço por kg) */
-  add("bolos", "", "kg", [
-    ["Marta Rocha", 92.90, "Pão de ló branco e preto, strogonoff de nozes, ameixa ou damasco, baba de moça, suspiro, nata e crocante de nozes."],
-    ["2 Amores", 83.90, "Pão de ló branco e preto, brigadeiro preto cremoso e brigadeiro branco cremoso."],
-    ["2 Amores com Morango", 88.90, "Pão de ló branco e preto, brigadeiro preto cremoso, brigadeiro branco cremoso e morangos."],
-    ["Choco Strawberry", 88.90, "Pão de ló preto, brigadeiro cremoso de avelã, raspas de chocolate e morangos."],
-    ["Prestígio", 88.90, "Pão de ló preto, creme de brigadeiro cremoso, cocada, creme belga e chantilly."],
-    ["Síria", 89.90, "Pão de ló branco, abacaxi fresco, creme de ovos, nata e creme belga."],
-    ["Abacaxi com Coco", 89.90, "Pão de ló branco, creme belga, abacaxi fresco e cocada."],
-    ["Oreo", 86.90, "Pão de ló branco e preto, brigadeiro cremoso de Oreo, creme belga e farofa de bolacha crocante."],
-    ["Morango com Creme Belga", 92.90, "Pão de ló branco, brigadeiro branco cremoso, creme belga, suspiro e morangos."],
-    ["Morango com Nata", 94.90, "Pão de ló branco, nata, brigadeiro branco cremoso, suspiro e morangos."],
-    ["Morango 6 Leites", 92.90, "Pão de ló branco, recheio de brigadeiros 5 leites, doce de leite, suspiro e morangos."],
-    ["Ninho com Nutella", 96.90, "Pão de ló branco, brigadeiro de ninho cremoso, Nutella, leite Ninho e creme belga."],
-    ["Bossa Nova", 92.90, "Pão de ló branco e preto, ameixa, doce de leite, cocada e geleia de damasco (3 camadas de recheio)."],
-    ["Frutas Tropicais", 90.90, "Pão de ló branco, creme belga, suspiro e frutas da época (abacaxi, cereja, pêssego, figo e morango)."],
-    ["Sonho de Valsa", 88.90, "Pão de ló branco e preto, brigadeiro cremoso de Sonho de Valsa, creme belga e bombons."],
-    ["Ouro Branco", 88.90, "Pão de ló branco e preto, brigadeiro cremoso de Ouro Branco, creme belga e bombons."],
-    ["Floresta Negra", 88.90, "Pão de ló preto, brigadeiro preto cremoso, creme belga e cerejas."],
-    ["Kinder Bueno", 92.90, "Pão de ló branco e preto, brigadeiro cremoso de avelã, brigadeiro de avelã branco e pedaços de chocolate."],
-    ["Strogonoff de Nozes", 94.90, "Pão de ló preto e branco, strogonoff de nozes, creme belga, cocada e crocante de nozes."],
-    ["Rafaello", 96.90, "Pão de ló branco com amêndoas, recheio especial de Rafaello, amêndoas, creme belga e cocada."],
-    ["Ferrero Rocher", 96.90, "Pão de ló preto, brigadeiro de avelã, amendoim xerém e creme belga."],
-    ["Pistache", 98.90, "Pão de ló branco, brigadeiro de pistache, doce de leite, geleia de framboesa e creme belga."],
-    ["Naked Cake 2 Amores", 92.90, "Pão de ló branco e preto, brigadeiro cremoso branco, brigadeiro cremoso preto e morangos para decoração."],
-    ["Naked Cake Red Velvet", 98.90, "Pão de ló especial red velvet, recheio de brigadeiro de cream cheese de limão, geleia de frutas vermelhas e frutas da época para decoração."],
-    ["Red Velvet", 96.90, "Pão de ló especial red velvet, recheio de brigadeiro de cream cheese de limão e geleia de frutas vermelhas."]
+  /* Bolos e tortas (preço por kg), conforme o cardápio mais recente */
+  add("bolos", "Queridinhos da loja", "kg", [
+    ["Ninho com Nutella", 98.90, "Pão de ló fofinho com creme de leite Ninho, Nutella e creme belga."],
+    ["Morango com Creme Belga", 94.90, "Leve, cremoso e fresco, com nata, brigadeiro branco e morangos selecionados."],
+    ["Morango 6 Leites", 94.90, "Leve, cremoso e fresco, com creme 5 leites, doce de leite cremoso e morangos selecionados."],
+    ["Ferrero Rocher", 98.90, "Chocolate intenso com creme de avelã e crocante. Um clássico sofisticado."],
+    ["Matilda", 106.90, "Três camadas de chocolate trufado, raspas de chocolate e calda cremosa de chocolate."]
+  ]);
+  add("bolos", "Sabores tradicionais", "kg", [
+    ["2 Amores", 86.90, "Brigadeiro branco e preto, bem cremosos."],
+    ["2 Amores com Morango", 92.90, "O clássico com morangos frescos."],
+    ["Prestígio", 90.90, "Chocolate com coco e creme belga."],
+    ["Oreo", 88.90, "Brigadeiro de Oreo com creme belga e crocância."],
+    ["Abacaxi com Coco", 92.90, "Abacaxi, cocada e creme belga."],
+    ["Sonho de Valsa", 92.90, "Brigadeiro especial com pedaços de Sonho de Valsa e creme belga."],
+    ["Ouro Branco", 94.90, "Brigadeiro especial com pedaços de Ouro Branco e creme belga."],
+    ["Floresta Negra", 94.90, "Brigadeiro cremoso preto, cerejas picadas e creme belga."],
+    ["Trufado de Maracujá", 94.90, "Trufado de chocolate com mousse de maracujá e raspas de chocolate."]
+  ]);
+  add("bolos", "Sabores especiais", "kg", [
+    ["Marta Rocha", 96.90, "Nozes, baba de moça, nata e crocante."],
+    ["Choco Strawberry", 94.90, "Chocolate com creme de avelã e morangos."],
+    ["Bossa Nova", 96.90, "Creme de ameixa, cocada, geleia de damasco e doce de leite cremoso."],
+    ["Frutas Tropicais", 94.90, "Figo, pêssego, abacaxi, morango e cereja, com creme belga e suspiro."],
+    ["Strogonoff de Nozes", 96.90, "Strogonoff de nozes, brigadeiro preto cremoso, creme belga e crocante de nozes caramelado."],
+    ["Strogonoff de Nozes com Cocada", 96.90, "Strogonoff de nozes, cocada cremosa, creme belga e crocante de nozes caramelado."],
+    ["Limão Siciliano com Geleia de Framboesa", 102.90, "Brigadeiro cremoso de limão siciliano com raspas, creme belga e geleia de framboesa."],
+    ["Pistache", 109.90, "Pistache, doce de leite e framboesa."],
+    ["Kinder Bueno", 94.90, "Creme de avelã e pedaços de chocolate."],
+    ["Raffaello", 96.90, "Coco, amêndoas e creme belga."]
+  ]);
+  add("bolos", "Naked cakes e red velvet", "kg", [
+    ["Naked Cake 2 Amores", 98.90, "Brigadeiros e morangos."],
+    ["Naked Red Velvet", 108.90, "Massa especial amanteigada de beterraba, creme de limão com toque de cream cheese e frutas vermelhas."]
   ]);
 
   /* Da vitrine (itens do dia a dia, preço sob consulta até ser informado) */
   add("bolos", "Da vitrine", "unidade", [
+    ["Red Velvet", null],
     ["Brownie com Nutella e marshmallow", null],
     ["Massa de baunilha com gotas de chocolate", null],
     ["Tortinha de morango", null]
+  ]);
+
+  /* Brigadeiros (preço por cento) */
+  add("brigadeiros", "Tradicionais", "cento", [
+    ["Brigadeiro de Beijinho", 144.90],
+    ["Brigadeiro Bicho de Pé", 144.90],
+    ["Brigadeiro Tradicional", 144.90],
+    ["Brigadeiro Branco", 144.90],
+    ["Brigadeiro de Cajuzinho", 144.90],
+    ["Brigadeiro Dois Amores", 144.90],
+    ["Brigadeiro Olho de Sogra", 144.90],
+    ["Brigadeiro de Paçoca", 144.90],
+    ["Brigadeiro de Amendoim", 144.90]
+  ]);
+  add("brigadeiros", "Gourmet", "cento", [
+    ["Brigadeiro de Abacaxi", 168.90],
+    ["Brigadeiro de Banoffee", 168.90],
+    ["Brigadeiro Belga (chocolate 70%)", 168.90],
+    ["Brigadeiro de Cappuccino", 168.90],
+    ["Brigadeiro Charge", 168.90],
+    ["Brigadeiro de Churros", 168.90],
+    ["Brigadeiro de Coco Queimado", 168.90],
+    ["Brigadeiro Confete", 168.90],
+    ["Brigadeiro de Creme Brûlée", 168.90],
+    ["Brigadeiro de Damasco", 168.90],
+    ["Brigadeiro de Doce de Leite Gourmet", 168.90],
+    ["Brigadeiro de Frutas Vermelhas", 168.90],
+    ["Brigadeiro Kinder Bueno", 168.90],
+    ["Brigadeiro Kit Kat", 168.90],
+    ["Brigadeiro de Leite Ninho", 168.90],
+    ["Brigadeiro de Limão Siciliano", 168.90],
+    ["Brigadeiro de Maracujá", 168.90],
+    ["Brigadeiro Ninho com Nutella", 168.90],
+    ["Brigadeiro de Nozes", 168.90],
+    ["Brigadeiro de Pistache", 168.90],
+    ["Brigadeiro Romeu e Julieta", 168.90],
+    ["Surpresa de Uva", 168.90]
+  ]);
+
+  /* Doces finos (preço por cento, salvo quando indicado) */
+  add("doces", "Bombons", "cento", [
+    ["Bombom de Banana (Caribe)", 260.00],
+    ["Bombom de Cereja", 260.00],
+    ["Bombom de Licor", 260.00],
+    ["Bombom de Morango", 268.90],
+    ["Bombom de Uva", 260.00]
+  ]);
+  add("doces", "Brigadeiros especiais", "cento", [
+    ["Brigadeiro Dois Amores em flor", 186.90],
+    ["Brigadeiro de Cereja", 188.90],
+    ["Brigadeiro de Champanhe", 190.90],
+    ["Brigadeiro Pistache", 188.90],
+    ["Brigadeiros saborizados (ampola)", 350.00, "Amarula, vodka, whisky, rum, gin, licor de menta e outros."]
+  ]);
+  add("doces", "Taças, copinhos e chocolates", "cento", [
+    ["Concha de Chocolate", 380.00],
+    ["Copinhos de chocolate recheados", 380.00],
+    ["Copinhos de chocolate saborizados", 3.50, "Ao leite, meio amargo e menta.", "unidade"],
+    ["Tacinha de Banoffee", 5.50, null, "unidade"],
+    ["Tacinha de Mousse", 4.50, null, "unidade"],
+    ["Xícaras de chocolate com cocada", 360.00],
+    ["Morango do Amor", 450.00]
+  ]);
+  add("doces", "Especiais", "cento", [
+    ["Espelhados", 280.00],
+    ["Camafeu de Nozes", 260.00],
+    ["Camafeu de Chocolate", 260.00],
+    ["Ferrero Rocher", 320.00],
+    ["Raffaello", 320.00]
   ]);
   add("doces", "Massas folhadas", "unidade", [
     ["Massa folhada com doce de leite", null],
     ["Massa folhada recheada", null]
   ]);
-  /* Brigadeiros (preço por cento) */
-  add("brigadeiros", "Tradicionais gourmet", "cento", [
-    ["Brigadeiro de Ovomaltine", 140.90],
-    ["Brigadeiro Branco", 140.90],
-    ["Brigadeiro Romeu e Julieta (parmesão e goiaba)", 142.90],
-    ["Brigadeiro Dois Amores", 140.90],
-    ["Brigadeiro de Churros", 143.90],
-    ["Brigadeiro Bicho de Pé", 143.90],
-    ["Brigadeiro Charge", 143.90],
-    ["Brigadeiro Tradicional", 140.90],
-    ["Brigadeiro de Maracujá", 140.90],
-    ["Brigadeiro de Café", 140.90],
-    ["Brigadeiro de Frutas Vermelhas", 140.90],
-    ["Brigadeiro de Banana com Canela", 143.90],
-    ["Brigadeiro de Abacaxi", 140.90],
-    ["Brigadeiro Olho de Sogra", 140.90],
-    ["Brigadeiro de Beijinho", 140.90],
-    ["Brigadeiro de Cajuzinho", 140.90],
-    ["Brigadeiro de Amendoim", 140.90],
-    ["Brigadeiro de Paçoca", 140.90],
-    ["Brigadeiro de Doce de Leite", 140.90],
-    ["Brigadeiro de Oreo", 140.90]
-  ]);
-  add("brigadeiros", "Gourmet especiais", "cento", [
-    ["Brigadeiro Belga (chocolate 70%)", 163.90],
-    ["Brigadeiro Confete", 163.90],
-    ["Brigadeiro Kit Kat", 163.90],
-    ["Brigadeiro Ninho com Nutella", 163.90],
-    ["Brigadeiro de Creme Brûlée", 176.90],
-    ["Brigadeiro Dois Amores em flor (grande, para casamento)", 180.90],
-    ["Surpresa de Uva", 163.90],
-    ["Brigadeiro de Banoffee", 163.90],
-    ["Brigadeiro de Pistache", 184.00],
-    ["Brigadeiro de Castanha", 163.90],
-    ["Brigadeiro de Nozes", 163.90],
-    ["Brigadeiro de Champanhe", 190.90],
-    ["Brigadeiro de Cappuccino com folha de pasta americana", 184.00],
-    ["Brigadeiro de Limão Siciliano com folha de pasta americana", 163.90],
-    ["Brigadeiro de Damasco", 190.90],
-    ["Brigadeiro de Cereja", 190.90]
-  ]);
 
-  /* Doces finos (preço por cento) */
-  add("doces", "Bombons", "cento", [
-    ["Bombom de Cereja", 254.00],
-    ["Bombom de Licor", 254.00],
-    ["Bombom de Uva", 254.00],
-    ["Bombom de Banana (Caribe)", 254.00],
-    ["Bombom de Morango", 260.00]
-  ]);
-  add("doces", "Taças e chocolates", "cento", [
-    ["Concha de Chocolate", 190.00],
-    ["Tacinhas de acrílico de Banoffee", 260.00],
-    ["Tacinhas de acrílico de Mousse", 250.00],
-    ["Xícaras de chocolate com cocada", 310.00],
-    ["Morango do Amor", 270.00]
-  ]);
-  add("doces", "Espelhados", "cento", [
-    ["Espelhado de Ouriço de Coco", 240.00],
-    ["Espelhado de Nozes", 240.00],
-    ["Espelhado de Cereja", 250.00],
-    ["Espelhado de Damasco", 240.00]
-  ]);
-  add("doces", "Especiais", "cento", [
-    ["Camafeu de Nozes", 240.00],
-    ["Camafeu de Nozes de Chocolate", 250.00],
-    ["Rafaello (hóstia)", 260.00],
-    ["Ferrero Rocher", 260.00],
-    ["Brigadeiros saborizados (ampola)", 260.00, "Amarula, vodka, whisky, rum, gin, licor de menta e outros."],
-    ["Copinhos de chocolate recheados", 360.00, "Brigadeiro cremoso ou mousse, decorados com tema."],
-    ["Copinhos de chocolate saborizados", 210.00, "Ao leite, meio amargo e menta. Unidade: R$ 3,00."]
-  ]);
-
-  /* Personalizados e decoração (valor inicial de 1 unidade) */
+  /* Personalizados e decoração (valor inicial de 1 unidade; ainda do cardápio anterior) */
   add("personalizados", "", "unidade", [
     ["Pão de Mel Decorado", 23.90],
     ["Maçãs do Amor de Chocolate, decoração em pasta americana", 24.90],
@@ -154,41 +159,38 @@
     ["Cupcake com decoração em chantilly", 15.90],
     ["Cupcake recheado sem decoração (só massa)", 12.50]
   ]);
-
   add("personalizados", "Da vitrine", "unidade", [
     ["Cupcake red velvet", null]
   ]);
 
   /* Salgados (cento, kg ou unidade) */
   add("salgados", "Por cento", "cento", [
-    ["Bolinha de Queijo", 134.90],
-    ["Risoles de Carne", 134.90],
-    ["Coxinha de Frango", 134.90],
-    ["Kibe Frito", 134.90],
-    ["Mini Empadinha", 134.90, "Frango, palmito ou mista."],
-    ["Doguinho", 130.90],
+    ["Bolinha de Queijo", 156.90],
+    ["Coxinha", 156.90],
+    ["Risoles", 156.90],
+    ["Kibe", 156.90],
+    ["Empadinha", 142.90, "Frango ou palmito."],
+    ["Doguinho", 144.90],
+    ["Mini Esfirra de Carne", 144.90],
+    ["Mini Pão de Batata", 144.90],
+    ["Pastéis Assados", 144.90],
+    ["Pastel Frito", 142.90]
+  ]);
+  add("salgados", "Especiais", "cento", [
     ["Mini Pizza", 185.00],
-    ["Pastel de Nata Assado", 132.90, "Carne, frango ou palmito."],
-    ["Mini Quiches", null, "Alho-poró, calabresa, bacon com milho, palmito ou figo com gorgonzola."],
-    ["Mini Pastel Frito", 134.90, "Carne, queijo ou pizza."],
-    ["Mini Esfiha", 130.90, "Carne ou frios."],
-    ["Mini Bolinha Assada de Requeijão", 130.90],
-    ["Mini Pão de Batata de Frango com Catupiry", 130.90],
-    ["Mini Assado de Milho com Bacon", 130.90],
-    ["Mini Enroladinho de Palmito", 130.90],
-    ["Mini Sanduíche", 8.50, "Frios, salame ou frango.", "unidade"],
-    ["Croissant mini de Frios", 164.90],
-    ["Croissant mini de Frango", 164.90],
-    ["Croissant mini de Palmito", 164.90]
+    ["Mini Quiches", 178.90],
+    ["Croissants", 178.90],
+    ["Mini Sanduíches", 5.50, null, "unidade"]
   ]);
   add("salgados", "Por kg", "kg", [
-    ["Empadão", 73.90, "Frango, palmito ou misto, com ou sem requeijão."],
-    ["Quiche", 83.90, "Palmito, milho com bacon, calabresa ou frango."],
-    ["Quiche de Alho-poró", 84.90],
-    ["Torta de Frios", 69.90],
-    ["Sanduíche de metro de Patê de Frango", 78.90, "Acompanha alface e mussarela."],
-    ["Sanduíche de metro de Patê de Peito de Peru", 78.90, "Acompanha alface e mussarela."],
-    ["Sanduíche de metro de Salame", 81.90, "Acompanha rúcula e queijo branco."]
+    ["Empadão", 78.90],
+    ["Quiches", 92.90],
+    ["Torta Fria", 78.90]
+  ]);
+  add("salgados", "Sanduíche de metro", "kg", [
+    ["Sanduíche de metro de Patê de Frango", 78.90],
+    ["Sanduíche de metro de Peito de Peru com queijo e salada", 78.90],
+    ["Sanduíche de metro de Salame com queijo e salada", 82.90]
   ]);
 
   window.SITE_DATA = {
@@ -217,7 +219,7 @@
       "Morango 6 Leites",
       "Brigadeiro Belga (chocolate 70%)",
       "Morango do Amor",
-      "Coxinha de Frango"
+      "Coxinha"
     ],
 
     // ids que já têm foto em assets/produtos/<id>.jpg

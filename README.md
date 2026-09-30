@@ -1,4 +1,4 @@
-# Fernanda Lemos Confeitaria
+# Fernanda Lemos Doceria
 
 Site estático (HTML, CSS e JavaScript puros, sem build). Abra `index.html` ou publique a pasta como está.
 

@@ -133,7 +133,11 @@
       lines.push("• " + qtyText(p, q) + " de " + p.name + price);
     });
     var est = estimate();
-    lines.push("", "Estimativa dos itens: " + fmt(est.total) + (est.pending ? " + itens sob consulta" : "") + " (sem decoração).");
+    if (est.total > 0) {
+      lines.push("", "Estimativa dos itens: " + fmt(est.total) + (est.pending ? " + itens sob consulta" : "") + " (sem decoração).");
+    } else {
+      lines.push("", "Os itens estão sob consulta.");
+    }
     if (order.date) {
       var d = order.date.split("-");
       lines.push("Data desejada: " + d[2] + "/" + d[1] + "/" + d[0] + ".");
@@ -220,7 +224,7 @@
       elItems.appendChild(li);
     });
     var est = estimate();
-    $("#basket-total").textContent = fmt(est.total);
+    $("#basket-total").textContent = est.total > 0 ? fmt(est.total) : "Sob consulta";
     $("#basket-total-note").textContent = "Sem decoração e personalização." + (est.pending ? " Itens sob consulta não entram na estimativa." : "") + " O valor final é confirmado pelo WhatsApp.";
     elSend.href = waLink(buildMessage());
   }
@@ -278,7 +282,7 @@
   var rail = $("#featured");
   var featured = data.featured.map(function (name) {
     return data.products.filter(function (x) { return x.name === name; })[0];
-  }).filter(function (p) { return p && hasPhoto(p.id); });
+  }).filter(function (p, i, all) { return p && hasPhoto(p.id) && all.indexOf(p) === i; });
 
   if (!featured.length) {
     $("#destaques").hidden = true;

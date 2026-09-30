@@ -57,6 +57,16 @@
     ["Red Velvet", 96.90, "Pão de ló especial red velvet, recheio de brigadeiro de cream cheese de limão e geleia de frutas vermelhas."]
   ]);
 
+  /* Da vitrine (itens do dia a dia, preço sob consulta até ser informado) */
+  add("bolos", "Da vitrine", "unidade", [
+    ["Brownie com Nutella e marshmallow", null],
+    ["Massa de baunilha com gotas de chocolate", null],
+    ["Tortinha de morango", null]
+  ]);
+  add("doces", "Massas folhadas", "unidade", [
+    ["Massa folhada com doce de leite", null],
+    ["Massa folhada recheada", null]
+  ]);
   /* Brigadeiros (preço por cento) */
   add("brigadeiros", "Tradicionais gourmet", "cento", [
     ["Brigadeiro de Ovomaltine", 140.90],
@@ -145,6 +155,10 @@
     ["Cupcake recheado sem decoração (só massa)", 12.50]
   ]);
 
+  add("personalizados", "Da vitrine", "unidade", [
+    ["Cupcake red velvet", null]
+  ]);
+
   /* Salgados (cento, kg ou unidade) */
   add("salgados", "Por cento", "cento", [
     ["Bolinha de Queijo", 134.90],
@@ -188,20 +202,34 @@
       { id: "salgados", label: "Salgados", singular: "Salgado", note: "Salgados vendidos por cento, por quilo e por unidade, conforme cada item." }
     ],
 
-    // Destaques do cardápio (nomes exatamente como na lista acima)
+    // Vitrine da página inicial: só aparecem os itens que têm foto (nomes como na lista acima)
     featured: [
+      "Massa folhada com doce de leite",
+      "Massa folhada recheada",
+      "Cupcake red velvet",
+      "Red Velvet",
+      "Brownie com Nutella e marshmallow",
+      "Massa de baunilha com gotas de chocolate",
+      "Tortinha de morango",
       "Marta Rocha",
       "2 Amores com Morango",
       "Ninho com Nutella",
       "Morango 6 Leites",
-      "Red Velvet",
       "Brigadeiro Belga (chocolate 70%)",
       "Morango do Amor",
       "Coxinha de Frango"
     ],
 
     // ids que já têm foto em assets/produtos/<id>.jpg
-    photos: [],
+    photos: [
+      "massa-folhada-com-doce-de-leite",
+      "massa-folhada-recheada",
+      "cupcake-red-velvet",
+      "red-velvet",
+      "brownie-com-nutella-e-marshmallow",
+      "massa-de-baunilha-com-gotas-de-chocolate",
+      "tortinha-de-morango"
+    ],
 
     products: products,
 

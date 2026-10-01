@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cachorro Loko — Hot Dogs Artesanais em Curitiba</title>
+<meta name="description" content="Foodtruck de hot dogs artesanais em Curitiba, no bairro Mercês. Veja os destaques do cardápio, onde encontrar e chame no WhatsApp.">
+<meta name="theme-color" content="#14110f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314110f'/%3E%3Ctext x='32' y='43' font-size='32' text-anchor='middle' font-family='Impact,sans-serif' fill='%23f2a81d'%3ECL%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
+<header class="topo" id="topo">
+  <div class="wrap topo__in">
+    <a class="marca" href="#topo" aria-label="Cachorro Loko, início">
+      <span class="marca__nome">Cachorro Loko</span>
+      <span class="marca__sub">Hot Dogs Artesanais</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#localizacao">Localização</a>
+      <a class="btn btn--sm" data-wa="geral" href="#" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__txt">
+        <p class="selo">Curitiba • Mercês</p>
+        <h1>Seu próximo hot dog favorito está aqui.</h1>
+        <p class="lead">Conheça o Cachorro Loko e descubra os sabores dos nossos hot dogs artesanais em Curitiba.</p>
+        <div class="acoes">
+          <a class="btn" href="#cardapio">Ver cardápio</a>
+          <a class="btn btn--ghost" data-wa="evento" href="#" target="_blank" rel="noopener">Levar para meu evento</a>
+        </div>
+      </div>
+      <div class="hero__img" data-img="hero" data-eager></div>
+    </div>
+  </section>
+
+  <section class="sec" id="cardapio">
+    <div class="wrap">
+      <p class="eyebrow">Cardápio</p>
+      <h2>Destaques da casa</h2>
+      <div class="produtos" id="produtos"></div>
+    </div>
+  </section>
+
+  <section class="sec sec--claro eventos" id="eventos">
+    <div class="wrap eventos__in">
+      <div class="eventos__img" data-img="evento"></div>
+      <div class="eventos__txt">
+        <p class="eyebrow">Foodtruck para eventos</p>
+        <h2 id="ev-titulo"></h2>
+        <p id="ev-texto"></p>
+        <ul class="tags" id="ev-tags"></ul>
+        <a class="btn btn--escuro" data-wa="evento" href="#" target="_blank" rel="noopener">Conversar sobre meu evento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="sobre">
+    <div class="wrap sobre">
+      <div>
+        <p class="eyebrow">Sobre</p>
+        <h2>Hot dog feito com capricho</h2>
+      </div>
+      <p class="sobre__txt" id="sobre-txt"></p>
+    </div>
+  </section>
+
+  <section class="sec sec--faixa" id="localizacao">
+    <div class="wrap loc">
+      <div>
+        <p class="eyebrow">Localização e horários</p>
+        <h2>Venha nos visitar</h2>
+      </div>
+      <dl class="loc__dados">
+        <div><dt>Endereço</dt><dd id="loc-end"></dd></div>
+        <div><dt>Horário</dt><dd id="loc-hor"></dd></div>
+        <div><dt>WhatsApp</dt><dd><a id="loc-wa" data-wa="geral" href="#" target="_blank" rel="noopener"></a></dd></div>
+      </dl>
+      <a class="btn" id="mapa" href="#" target="_blank" rel="noopener">Como chegar</a>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="wrap rodape__in">
+    <div>
+      <strong class="marca__nome">Cachorro Loko</strong>
+      <p>Hot Dogs Artesanais · Curitiba, PR</p>
+    </div>
+    <nav aria-label="Rodapé">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#eventos">Eventos</a>
+      <a href="#localizacao">Localização</a>
+    </nav>
+    <div>
+      <a id="rod-ig" href="#" target="_blank" rel="noopener"></a><br>
+      <a id="rod-wa" data-wa="geral" href="#" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</footer>
+
+<a class="fixo" data-wa="geral" href="#" target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">WhatsApp</a>
+
+<script src="site-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

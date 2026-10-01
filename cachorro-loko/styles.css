@@ -1,0 +1,122 @@
+:root{
+  --carvao:#14110f; --carvao2:#1d1916; --creme:#f4ead8; --ambar:#f2a81d; --ambar-esc:#b87708;
+  --vermelho:#c8321f; --muted:#c9bda8;
+  --titulo:"Anton","Impact",sans-serif; --corpo:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--carvao);color:var(--creme);font:400 17px/1.6 var(--corpo);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ambar);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ambar);color:#000;padding:8px 14px;z-index:99}
+.skip:focus{left:8px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+
+h1,h2,h3{font-family:var(--titulo);font-weight:400;text-transform:uppercase;line-height:1.02;letter-spacing:.01em}
+h1{font-size:clamp(2.7rem,7vw,5.4rem)}
+h2{font-size:clamp(2rem,4.5vw,3.2rem);margin-bottom:.5em}
+h3{font-size:1.6rem}
+.eyebrow{color:var(--ambar);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;margin-bottom:.6rem}
+
+.btn{display:inline-block;background:var(--ambar);color:#1a1100;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:6px;border:2px solid var(--ambar);text-align:center;transition:background .15s}
+.btn:hover{background:#ffc04a}
+.btn--sm{padding:9px 16px;font-size:.92rem}
+.btn--ghost{background:transparent;color:var(--creme);border-color:var(--creme)}
+.btn--ghost:hover{background:var(--creme);color:var(--carvao)}
+.btn--escuro{background:var(--carvao);color:var(--creme);border-color:var(--carvao)}
+.btn--escuro:hover{background:#000}
+
+/* topo */
+.topo{position:sticky;top:0;z-index:20;background:var(--carvao);border-bottom:1px solid #2c2620}
+.topo__in{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.marca{text-decoration:none;display:flex;flex-direction:column;line-height:1}
+.marca__nome{font-family:var(--titulo);text-transform:uppercase;font-size:1.6rem;color:var(--ambar);letter-spacing:.02em}
+.marca__sub{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a:not(.btn){text-decoration:none;font-weight:500}
+.nav a:not(.btn):hover{color:var(--ambar)}
+.menu-btn{display:none;background:none;color:var(--creme);border:1px solid var(--muted);border-radius:6px;padding:8px 14px;font:500 .95rem var(--corpo);cursor:pointer}
+
+/* hero */
+.hero{padding:56px 0 72px;background:radial-gradient(60% 70% at 85% 40%,rgba(242,168,29,.14),transparent 70%)}
+.hero__in{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.selo{display:inline-block;border-left:4px solid var(--vermelho);padding-left:10px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.hero h1{margin-bottom:22px}
+.lead{font-size:1.2rem;color:var(--muted);max-width:34ch;margin-bottom:30px}
+.acoes{display:flex;flex-wrap:wrap;gap:14px}
+.hero__img{aspect-ratio:4/5;border-radius:10px;overflow:hidden}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+
+/* áreas de reserva de foto */
+.ph{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;
+  background:radial-gradient(70% 60% at 50% 35%,rgba(242,168,29,.28),transparent 70%),repeating-linear-gradient(135deg,#221d19 0 14px,#1b1714 14px 28px);
+  border:1px solid #3a3027}
+.ph__t{font-family:var(--titulo);text-transform:uppercase;font-size:clamp(1.8rem,4vw,3rem);color:var(--ambar);line-height:1}
+.ph__s{margin-top:10px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* seções */
+.sec{padding:84px 0}
+.sec--claro{background:var(--creme);color:var(--carvao)}
+.sec--claro .eyebrow{color:var(--vermelho)}
+.sec--faixa{background:var(--carvao2)}
+
+.produtos{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-top:28px}
+.prod{background:var(--carvao2);border:1px solid #2c2620;border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.prod--destaque{display:grid;grid-template-columns:1fr 1fr}
+.prod__img{min-height:300px}
+.prod__img img{width:100%;height:100%;object-fit:cover}
+.prod__txt{padding:30px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;justify-content:center}
+.prod__txt p{color:var(--muted)}
+.prod--mais{padding:30px;justify-content:center;gap:14px;align-items:flex-start;border-style:dashed;border-color:var(--ambar-esc)}
+.prod--mais p{color:var(--muted)}
+.revisar{color:var(--ambar)!important;font-size:.8rem;text-transform:uppercase;letter-spacing:.1em}
+.preco{color:var(--ambar)!important;font-weight:700;font-size:1.3rem}
+
+/* eventos */
+.eventos__in{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.eventos__img{aspect-ratio:4/3;border-radius:10px;overflow:hidden}
+.eventos__img img{width:100%;height:100%;object-fit:cover}
+.eventos__txt p{max-width:46ch;margin-bottom:20px}
+.tags{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tags li{border:2px solid var(--carvao);border-radius:99px;padding:5px 14px;font-weight:700;font-size:.9rem}
+
+/* sobre */
+.sobre{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+.sobre__txt{font-size:1.2rem;color:var(--muted)}
+
+/* localização */
+.loc{display:grid;grid-template-columns:1fr 1.2fr;gap:40px 56px;align-items:start}
+.loc .btn{justify-self:start;grid-column:2}
+.loc__dados{display:grid;gap:18px}
+.loc__dados dt{color:var(--ambar);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.loc__dados dd{font-size:1.15rem}
+.loc__dados a{text-decoration:underline}
+
+.rodape{padding:40px 0 90px;border-top:1px solid #2c2620;color:var(--muted)}
+.rodape__in{display:flex;flex-wrap:wrap;gap:28px 56px;justify-content:space-between}
+.rodape nav{display:flex;flex-direction:column;gap:6px}
+.rodape a{text-decoration:none}.rodape a:hover{color:var(--ambar)}
+
+/* WhatsApp fixo: só no celular */
+.fixo{display:none}
+
+@media (max-width:860px){
+  body{font-size:16px}
+  .menu-btn{display:block}
+  .nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--carvao);flex-direction:column;align-items:stretch;gap:0;padding:8px 20px 20px;border-bottom:1px solid #2c2620}
+  .nav.aberto{display:flex}
+  .nav a{padding:12px 0}
+  .nav .btn{margin-top:8px}
+  .hero{padding:28px 0 48px}
+  .hero__in{grid-template-columns:1fr;gap:28px}
+  .hero__img{order:2;aspect-ratio:4/3}
+  .acoes .btn{flex:1 1 100%}
+  .sec{padding:56px 0}
+  .produtos,.prod--destaque,.eventos__in,.sobre,.loc{grid-template-columns:1fr}
+  .eventos__in,.sobre{gap:28px}
+  .loc .btn{grid-column:1}
+  .prod__img{min-height:220px}
+  .fixo{display:block;position:fixed;right:14px;bottom:14px;z-index:30;background:#0e7a3a;color:#fff;font-weight:700;text-decoration:none;padding:11px 18px;border-radius:99px;box-shadow:0 3px 12px rgba(0,0,0,.5)}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
